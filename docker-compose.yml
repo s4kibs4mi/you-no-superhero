@@ -1,0 +1,16 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    ports:
+    - 6379:6379
+
+  rabbitmq:
+    image: rabbitmq:alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: "batman"
+      RABBITMQ_DEFAULT_PASS: "batman"
+    ports:
+    - 5672:5672
+    - 15672:15672
+    - 8080:8080
